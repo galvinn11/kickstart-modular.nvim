@@ -24,7 +24,7 @@ vim.o.signcolumn = 'yes' -- Keep signcolumn on by default
 vim.o.updatetime = 250 -- Decrease update time
 vim.o.timeoutlen = 300 -- Decrease mapped sequence wait time
 vim.o.inccommand = 'split' -- Preview substitutions live, as you type!
-vim.o.cursorline = true -- Show which line your cursor is on
+vim.o.cursorline = false -- Show which line your cursor is on
 vim.o.scrolloff = 10 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.confirm = true -- raise a dialog asking to confirm when an operation would fail due to unsaved changes in the buffer
 
@@ -49,3 +49,4 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- end)
 
 -- vim: ts=2 sts=2 sw=2 et
+--
