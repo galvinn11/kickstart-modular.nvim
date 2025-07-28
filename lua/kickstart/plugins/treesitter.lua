@@ -11,6 +11,7 @@ return {
                 'c_sharp',
                 'css',
                 'diff',
+                'go',
                 'html',
                 'javascript',
                 'lua',

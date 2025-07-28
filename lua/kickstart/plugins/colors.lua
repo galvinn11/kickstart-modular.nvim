@@ -1,10 +1,4 @@
--- function Colors(index)
---     local colorMap = { 'tokyonight-night', 'kanagawa-dragon', 'tokyonight-storm' }
---     local color = colorMap[index] or colorMap[1]
---     vim.cmd.colorscheme(color)
--- end
-
-local colorMap = { 'tokyonight-night', 'kanagawa-dragon', 'tokyonight-storm' }
+local colorMap = { 'tokyonight-night', 'kanagawa-dragon', 'tokyonight-storm', 'kanagawa' }
 local currentIndex = 1
 
 function Colors(index)
@@ -17,18 +11,11 @@ function Colors(index)
         color = colorMap[currentIndex]
     end
 
-    -- Apply the colorscheme
     vim.cmd.colorscheme(color)
-
-    -- Echo to command line
     vim.defer_fn(function()
-        vim.api.nvim_echo({ { 'Colorscheme: ' .. color, 'MoreMsg' } }, false, {})
-    end, 0) -- delay in milliseconds
+        vim.api.nvim_echo({ { 'Colorscheme: ' .. currentIndex .. ') ' .. color, 'MoreMsg' } }, false, {})
+    end, 0)
 end
-
--- vim.schedule(function()
---     Colors()
--- end)
 
 return {
     { -- You can easily change to a different colorscheme.
@@ -51,7 +38,7 @@ return {
             -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
             vim.cmd.colorscheme 'tokyonight-night'
             vim.keymap.set('n', '<leader>cl', '<cmd>lua Colors()<CR>', { desc = 'Cycle color schemes: 1-' .. #colorMap })
-            vim.keymap.set('n', '<leader>cL', ':lua Colors(', { desc = 'Start calling the function to set the color scheme' })
+            vim.keymap.set('n', '<leader>cL', ':lua Colors()<Left>', { desc = 'Start calling the function to set the color scheme' })
             -- vim.keymap.set('n', '<leader>cl3', ':lua Colors(3)<CR>', { desc = 'Set the color scheme to tokyonight-storm' })
         end,
     },

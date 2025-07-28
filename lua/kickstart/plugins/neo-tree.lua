@@ -12,7 +12,7 @@ return {
     lazy = false,
     keys = {
         { '\\', '<cmd>Neotree reveal left<CR>', desc = 'NeoTree reveal', silent = true },
-        { '|', '<cmd>Neotree reveal buffers right<CR>', desc = 'NeoTree show open buffers', silent = true },
+        { '|', '<cmd>Neotree toggle buffers right<CR>', desc = 'NeoTree show open buffers', silent = true },
     },
     opts = {
         filesystem = {

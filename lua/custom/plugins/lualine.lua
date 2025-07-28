@@ -5,10 +5,8 @@ return {
         require('lualine').setup {
             options = {
                 theme = 'auto',
-            },
-            {
-                section_separators = { left = '', right = '' },
-                component_separators = { left = '', right = '' },
+                -- section_separators = { left = '', right = '' },
+                -- component_separators = { left = '', right = '' },
             },
             sections = {
                 lualine_a = { 'mode' },
@@ -26,13 +24,16 @@ return {
                 lualine_y = {},
                 lualine_z = {},
             },
-            -- tabline = {
-            --     lualine_a = { 'buffers' },
-            --     lualine_b = {},
-            --     lualine_c = {},
-            --     lualine_x = {},
-            --     lualine_y = {},
-            --     lualine_z = { 'tabs' },
+            tabline = {
+                lualine_a = { { 'filename', path = 1 } },
+                lualine_b = {},
+                lualine_c = {},
+                lualine_x = {},
+                lualine_y = {},
+                lualine_z = { { 'tabs', mode = 0, path = 0 } },
+            },
+            -- winbar = {
+            --     lualine_a = { { 'filename', path = 3 } },
             -- },
             extensions = { 'neo-tree' },
         }
